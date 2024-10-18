@@ -77,6 +77,7 @@ LIMIT 10
 ```
 
 ![breedname_x_avgvalue](/assets/Top_10_raças_caras/breed%20x%20price.png)
+
 *Gráfico de Barra das raças mais caras em função do preço.*
 
 Podemos ver que o preço das raças de gato podem variar bastante, podendo chegar até **$2000,00**! Algumas raças bastante conhecidas como a **Sphynx** estão nessa lista, é esperado que os custos de cuidado para um gato desse tipo são elevados.
@@ -107,6 +108,7 @@ GROUP BY fur
 Podemos notar que as únicas duas raças **sem pelo** estão entre as 10 raças de gatos mais caras, revelando que existe um alto valor agregado a essa característica. Além disso, é possível notar uma predominância do pelo curto com relação ao longo.
 
 ![lap_count x breed](/assets/Top_10_raças_caras/count%20breed%20x%20fur.png)
+
 *Gráfico de barra da Distrinuição de gatos por tipo de pelagem para as Top 10 raças de gato mais caras.*
 
 ### Peso médio
@@ -180,6 +182,7 @@ LIMIT 12
 Traços como **"Gentil"**, **"Afeituoso"**, **"Leal"** e **"Inteligente"** são os mais comuns dentre os gatos mais caros.
 
 ![count_breed_x_temperament](/assets/Top_10_raças_caras/count%20breed%20x%20temperament.png)
+
 *Gráfico de barra para a Contagem de Traços de temperamento das raças de gato mais caras.*
 
 ### Preferência de Colo
@@ -206,6 +209,7 @@ GROUP BY lapcat
 É indiscutível a preferência dos gatos pelo **colo**. 
 
 ![count_lap_top_10](/assets/Top_10_raças_caras/count%20lap.png)
+
 *Gráfico de Barra da preferência de colo ou não para as raças de gato mais caras.*
 
 É importante ressaltar que para as análises serem feitas de forma correta é necessário um bom entendimento do *dataset*, todo e qualquer resultado obtido deve ser pensado e discutido para não tomarmos conclusões errôneas. Ao olharmos a distribuição de preferência de colo do *dataset*, podemos perceber que grande parte das raças são de fato de colo, o que não revela a princípio uma associação desta característica com o preço da raça.
@@ -223,6 +227,7 @@ GROUP BY lapcat
 Vamos comparar os resultados obtidos com as raças mais baratas. Para isso, realizaremos as mesmas análises.
 
 ![top_13_breed](/assets/Top_12_raças_baratas/breed%20name%20x%20avgval.png)
+
 *Gráfico de Barra das raças mais baratas em função do preço.*
 
 Note a diferença de preço comparado as raças mais caras. Isso mostra que a escolha da raça do gato está de alguma forma atrelada à classe social do comprador.
@@ -232,6 +237,7 @@ Note a diferença de preço comparado as raças mais caras. Isso mostra que a es
 Vamos realizar a contagem do tipo de pelo para as raças de gato mais baratas e comparar com as mais caras.
 
 ![count_fur_x_breed_top_13](/assets/Top_12_raças_baratas/count%20fur%20x%20breed.png)
+
 *Gráfico de Barra da contagem do tipo de pelo das raças de gato mais baratas.*
 
 Notemos que o pelo **curto** predomina em detrimento dos demais. Ademais, não há raças de gato sem sem pelo dentre as mais baratas, mostrando que esse tipo de gato está atrelado a uma classe econômica mais elevada.
@@ -246,6 +252,7 @@ Utilizando um código similar ao caso das raças mais caras, obtemos um peso mé
 Vamos realizar a contagem dos traços de temperamento para as raças de gato mais baratas utilizando um *script* similar ao caso anterior.
 
 ![count_trait_top_13](/assets/Top_12_raças_baratas/count%20trait.png)
+
 *Gráfico de Barra da contagem de traços de temperamento para as raças mais baratas.*
 
 Traços como **"Brincalhão"**, **"Ativo"**, **"Curioso"**, **"Calmo"** e **"Descontraído"** são os mais predominantes dentre as raças mais baratas.
@@ -328,11 +335,13 @@ GROUP BY fur
 Podemos perceber que o tipo de pelo **curto** predomina sobre os demais. As únicas duas raças **sem pelo** estão dentre as mais populares e não vemos nenhum gato de pelo médio nesse conjunto.
 
 ![count_fur_top_pop](/assets/Raças_mais_populares/count%20fur.png)
+
 *Gráfico de Barra da contagem do tipo de pelo para as raças de gato mais populares.*
 
 De modo análogo, podemos fazer o mesmo para as raças de felino menos populares:
 
 ![count_fur_bot_pop](/assets/Raças_menos_populares/count%20fur.png)
+
 *Gráfico de Barra da contagem do tipo de pelo para as raças de gato menos populares.*
 
 Desta vez o pelo **longo** predomina, enquanto o pelo curto só possui 1 contagem. Podemos ver também que há felinos com pelo médio no conjunto. Comparando-se os dois resultados, o pelo médio está de alguma forma associado a uma baixa popularidade, no que se distingue do pelo curto e sem pelo.
@@ -387,11 +396,13 @@ LIMIT 15
 Traços como **"Gentil"**, **"Leal"**, **"Calmo"** e **"Afetuoso"** estão entre os mais comuns.
 
 ![count_trait_top_pop](/assets/Raças_mais_populares/count%20trait.png)
+
 *Gráfico de Barra da contagem de Traço para as raças de gato mais populares.*
 
 Podemos fazer o mesmo para as raças de gato mais baratas: Traços como **"Inteligente"**, **"Brincalhão"**, **"Afetuoso"** e **"Gentil"** se destacam.
 
 ![count_trait_bot_pop](/assets/Raças_menos_populares/count%20trait.png)
+
 *Gráfico de Barra da contagem de Traço para as raças de gato menos populares.*
 
 ## Agrupar por Peso
@@ -471,7 +482,6 @@ O peso de **7 kg** possui a **maior popularidade**, com uma média de **11** seg
 | 4.00      | 23.79      | Colo           | Longo | Inteligente    |
 | 3.00      | 15.00      | Colo           | Curto | Inteligente    |
 
-
 *Tabela do Peso, popularidade média, preferência de colo, Tipo de Pelo e Traço de Temperamento.*
 
 Vamos agora obter a média de preço para cada um dos pesos. Para isso devemos agrupar por peso e calcular a média de todos os preços da seguinte forma:
@@ -488,6 +498,7 @@ ORDER BY malewtkg DESC
 Podemos averiguar que o peso de **7 kg** domina o preço médio com mais de **$1300,00** seguido do de **3 kg** com um pouco mais de **$1100,00**. O peso de **6 kg** possui o menor valor (~$600,00).
 
 ![avg_price_x_weight](/assets/agrupamento_peso/preço%20médio.png)
+
 *Visualização do preço médio em função do peso.*
 
 É notório a relação do preço com a popularidade, raças de gato com uma maior popularidade costumam ter preços maiores. Notemos também que não existe uma relação linear entre peso e nenhuma das características anteriores.
@@ -503,12 +514,12 @@ Vamos agrupar as raças de gato pelo tipo de pelo e fazer uma análise análoga 
 | Médio  | 27.63      | Colo           | 5.13             | Inteligente  |
 | Curto  | 14.75      | Colo           | 4.69             | Brincalhão   |
 
-
 *Tabela do Pelo, popularidade média, preferência de colo, Peso Médio e Traço de Temperamento.*
 
 Podemos ver que o tipo sem pelo tem uma popularidade maior como já era de se esperar pelas análises anteriores seguido do pelo curto. A preferência de todos os conjuntos é pelo Colo e os pesos não distam de forma significante. O traço de temperamento **"Inteligente"** é o mais predominante em dois dos conjuntos. Podemos agora obter o valor médio para cada tipo de pelo.
 
 ![price_x_fur](/assets/agrupamento_pelo/preço%20médio.png)
+
 *Visualização do preço médio em função do Tipo de Pelo.*
 
 O **sem pelo** domina com um valor maior que **$1400,00** seguido do pelo médio. O pelo curto está em último com um valor inferior à $800,00.
@@ -520,12 +531,14 @@ Como anteriormente mencionado em [Tipo de Pelo (preço)](#tipo-de-pelo-1), o pel
 Vamos considerar as mesma análises feitas anteriormente, mas desta vez agrupando por traço de temperamento. Para esta análise vamos considerar apenas os traços que se repetem ao menos duas vezes, pois ao averiguar o *dataset*, existem alguns traços de temperamento que são exclusivos de algumas raças de gato (e.g. Six-Toed).
 
 ![avg_price_x_trait](/assets/agrupamento_temperamento/preço%20médio.png)
+
 *Gráfico de Barra do preço médio em função do traço de temperamento.*
 
 Traços como **"Paciente"**, **"Inquisitivo"**, **"Doce"** e **"Independente"** possuem os **maiores** valores médios, enquanto que **"Calmo"**, **"Descontraído"**, **"Ativo"** e **"Curioso"** possuem os **menores**. Ao compararmos com [Traço de Temperamento (preço)](#traço-de-temperamento-1), podemos identificar alguns traços em comum (Curioso, Brincalhão, Calmo, Descontraído), revelando que tais traços podem estar atrelados de alguma forma a uma diminuição do preço.
 Vamos fazer a mesma análise para a **popularidade**.
 
 ![pop_x_trait](/assets/agrupamento_temperamento/popularidade.png)
+
 *Gráfico de Barra da Popularidade Média em função do traço de temperamento.*
 
 Vemos que traços como **Independente**, **Amoroso**, **Inquisitivo** e **Doce** estão entre os **mais desejados**, enquanto que **Interativo**, **Exigente**, **Vivaz**, **Esperto** e **Dependente** estão entre os **menos desejados**. É interessante notar como tais traços de temperamento estão de alguma forma atrelados com características que não são muito bem-vindas em sua grande maioria. Comparando-se com [Traço de Temperamento (popularidade)](#traço-de-temperamento-2) podemos notar que existem muitos traços em comum nos dois conjuntos, **Amoroso**, **Independente**, **Doce**, **Inquisitivo** estão atrelado a uma **grande popularidade**, enquanto que **Brincalhão** e **Inteligente** estão relacionados a uma **menor popularidade**.
