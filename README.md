@@ -1,6 +1,6 @@
 # Introdução 🙋‍♂️
 
-Está procurando adquirir um gato 🐈? 
+Está querendo cuidar de um gatinho 🐈? 
 
 Um animal de estimação pode ser o seu maior companheiro ou um incômodo se escolhido de forma errada. É muito importante pesquisar sobre a raça do animal que está disposto a adquirir para verificar se ela é compatível com o seu perfil. Portanto, realizei uma análise sobre várias características atreladas à raças de gatos para ajudá-lo na sua escolha! 
 
@@ -15,6 +15,8 @@ Como pode ver, existem uma série de fatores que podemos considerar para tornar 
 
 # Ferramentas Utilizadas 🛠️
 - **PostgreSQL:** O software utilizado para criar um database;
+- **PowerBI:** A plataforma utilizada para montar um *dashboard* com filtros interativos;
+- **Power Query:** O software utilizado para a extração, transformação e carregamentos dos dados;
 - **Visual Studio Code:** O ambiente utilizado para criar os códigos com facilidade e rapidez;
 - **SQL:** A linguagem de programação utilizada para manipular os dados com facilidade;
 - **Python:** A linguagem de programação utilizada para criar visualizações dos resultados de forma de fácil compreensão;
@@ -29,9 +31,30 @@ O *dataset* escolhido está disponibilizado no repositório bem [aqui](/cat_bree
 
 # Limpeza e Processamento de Dados ✔️
 
-Ao colorcar-se em mãos de um *dataset*, o primeiro passo utilizado por qualquer analista de dados é a checagem da possível existência de dados errôneos. É bastante comum algum dado não ter sido inserido em um formato correto ou a informação contida nele se distancia do conjunto de interesse, porquanto, a limpeza e transformação do *dataset* tornam-se necessárias.
+Ao colorcar-se em mãos de um *dataset*, o primeiro passo utilizado por qualquer analista de dados é a checagem da possível existência de dados errôneos. Para isso, utilizei o **Power Query** para a criação de duas tabelas:
 
-Posteriormente, é necessário processar os dados de forma que é possível armazená-los em algum *database* (PostgreSQL) e manipulá-los na ferramenta de interesse (SQL).
+- 🗃️ A primeira com as raças de gato e suas características;
+- 🐱 A segunda listando os traços de personalidade para cada raça.
+
+Depois, foi necessário corrigir alguns erros de digitação, desconsiderar informações desnecessárias e dados errôneos e tornar as tabelas objetivas.
+
+![](/assets/ETL/transform_cat_characteristics.PNG)
+
+*Sequência de transformações feitas na primeira tabela.*
+
+![](/assets/ETL/transform_cat_traits.PNG)
+
+*Sequência de transformações feitas na segunda tabela.*
+
+Finalmente, é necessário processar os dados de forma que é possível armazená-los em algum *database* (PostgreSQL) e manipulá-los na ferramenta de interesse (SQL).
+
+![](/assets/ETL/cat_characteristics.PNG)
+
+*Tabela com as raças de gato e suas principais caracterísricas.*
+
+![](/assets/ETL/cat_traits.PNG)
+
+*Tabela com as raças de gato e seus traços.*
 
 # Criação do Database 🛢️
 
@@ -58,6 +81,30 @@ Copiar no PSQL Tool:
 \copy CatBreeds FROM 'C:/Users/pedac/OneDrive/Documentos/Projects for Data Science/pet_Analysis/cat/cat_breed_characteristics.csv' DELIMITER ',' CSV HEADER;
 */
 ```
+
+# Dashboard 📋
+
+
+Eu criei um dashboard para você investigar qual a raça de gato que mais combina com o seu perfil!
+
+![](/assets/gif_dashboard.gif)
+
+A tabela foi construída utilizando **PowerBI**, de forma que seja de fácil utilização e as informações estejam de forma clara e objetiva. 
+
+No dashboard você encontrará filtros para:
+
+- 🐾 **Tipo de pelo**
+- 😴 **Preferência de Colo**
+- 🎭 **Traço de Personalidade**
+- ⚖️ **Peso**
+- 💲 **Faixa de Preço**
+
+Como também há a funcionalidade de apagar todos os filtros selecionados.
+
+Confira o dashboard:
+
+📌 [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOWRlOWQxMDYtOWUxZi00ZTY5LTgxZGMtYjljOTQ5M2E4ZTUwIiwidCI6IjdlOTNlMjg2LWIyOWEtNDQ1NC1hNDFhLWU4NDE5ZWM5ZGViNSJ9)
+
 
 # Análise 🔎
 
